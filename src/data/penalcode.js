@@ -1,75 +1,51 @@
-// Kumpletong teksto ng Batas Penal (Artikulo 100–115), isinalin sa Tagalog.
-// Ginagamit ito ng PenalCodeTab.vue bilang reference page — hiwalay ito sa
-// charges.js, na para sa mga numero/computation ng ulat.
-
 export const PENAL_CODE = [
   {
     number: "100",
     title: "Sibil na Paglabag",
-    body: `Seksyon 1: Pambubulabog sa Kapayapaan / Iskandalo sa Publiko
+    body: `Seksyon 1: Pampublikong Eskandalo / Pag-abala sa Kapayapaan
 
-- Paglaboy-laboy / Pagkalat ng Basura
-- Magulong Asal
-- Paglapastangan sa mga lumang labi tulad ng makasaysayang templo, lumang guho, at simbahan
-- Sapakan/Away ng mga Residente
+- Paglilibot / Pagtatapon ng Basura
+- Magulong Ugali
+- Hindi paggalang sa makasaysayang templo, lumang guho, at simbahan
+- Pagpapabilis ng karwahe o kabayo
+- Pag-aaway ng mga residente
 
-Parusa: Multa $150 + Sapilitang Paggawa o Piitan ng Bayan
-Sapilitang Paggawa: Pagsasaka ng 30 buto ng binhi / Konstruksyon 5 round, o
-Piitan: Piitan ng Bayan, 1 Oras
+Parusa: Multa $150 + Sapilitang Paggawa o Lokal na Kulungan
+Sapilitang Paggawa: Pagtatanim ng 30 piraso ng buto / Konstruksiyon 5 round, o
+Kulungan: Town Jail, 1 Oras
 
-Seksyon 2: Hindi Pagsunod sa Awtoridad / Sapakan, Away
+Seksyon 2: Paglabag sa Pagsunod / Pag-aaway
 
-Kasama dito ang hindi pagpapakita ng pasaporte o sedula kapag hiningi ng sinumang Opisyal ng Kapayapaan o opisyal ng gobyerno.
-Hindi pagsunod o magalang na pag-uugali tungo sa Opisyal ng Kapayapaan o opisyal ng gobyerno at mga residente.
-Pagbigay ng pekeng pagkakakilanlan (mga alyas lamang).
-Pag-iwas sa pagtanggal ng takip sa mukha.
+- Hindi pagsunod o pagiging bastos sa mga tagapagpatupad ng batas at residente
+- Paggamit ng pekeng identidad (mga alias lamang)
+- Pagtangging alisin ang takip sa mukha
 
 Parusa: Multa $200
-Piitan: Piitan ng Bayan, 1 Oras
-
-Seksyon 3: Sobrang Bilis ng Karwahe o Kabayo at Pabayang Pagmamaneho ng Kabayo/Wagon
-
-Sinumang taong sumasakay o nagpapatakbo ng kabayo/karwahe sa loob ng hangganan ng bayan ng Rhodes, Blackwater, Armadillo, Saint Denis, Tumbleweed, Valentine, o Strawberry sa bilis na lumalagpas sa dalawang (2) tapak ay ituturing na nagkasala ng Pagmamaneho nang Pabaya sa Loob ng Hangganan ng Bayan.
-
-TAMANG PAGSAKAY
-Ang pagsakay o pagpapatakbo ng kabayo sa mabilis na bilis sa loob ng nasabing mga bayan ay hindi, sa kanya lamang, ituturing na paglabag, basta ang bilis ng kabayo ay hindi lumalagpas sa dalawang (2) tapak.
-
-MGA PARUSA
-(a) Unang Paglabag: Opisyal na Babala mula sa Opisyal ng Kapayapaan
-(b) Ikalawang Paglabag: Multa na Isang Daan Limampung Dolyar ($150)
-(c) Ikatlong Paglabag: Multa na Tatlong Daang Dolyar ($300)
-(d) Ikaapat na Paglabag: Multa na Limang Daang Dolyar ($500)
-(e) Ikalima at Sumunod na Paglabag: Multa na Limang Daang Dolyar ($500) at Pagkakabilanggo ng 30 minuto
-
-KAPANGYARIHAN NA MAGSAMPA NG KASO
-Sinumang Opisyal ng Kapayapaan na gumagawa sa loob ng legal na saklaw ng kanyang tungkulin ay maaaring pahintuin, sampahan ng kaso, at parusahan ang sinumang indibidwal na napansing nalabag ang mga probisyon ng Artikulong ito.
-
-EKSEMPSYON
-Ang Artikulong ito ay hindi ipatutupad sa mga Opisyal ng Kapayapaan, deputies, marshal, o iba pang ahente at opisyal ng gobyerno, at mga tauhang medikal, na aktibong gumagawa ng kanilang opisyal na tungkulin na nangangailangan ng agarang pagtugon sa isang emerhensiya o banta sa kaligtasan ng publiko.`,
+Kulungan: Town Jail, 1 Oras`,
   },
   {
     number: "101",
-    title: "Pagnanakaw, Panloloob, at Pagpasok sa Bahay",
+    title: "Pagnanakaw, Panghihimasok, at Pagpasok sa Ari-arian",
     body: `Uri 1: Pagnanakaw
 
-- Lokal na Pagnanakaw, Pagnanakaw sa Bulsa, Pagnanakaw sa Sampayan, Panghuhukay ng Libingan
-- Panloloko
+- Lokal na panloloob, pandurukot, pagnanakaw sa sampayan, paghuhukay ng libingan
+- Panloloko / Con-Artist
 
-Parusa: Multa $200 + Sapilitang Paggawa o Piitan ng Bayan
-Sapilitang Paggawa: Pagsasaka 30 buto ng binhi / Konstruksyon 5 round, o
-Piitan: Piitan ng Bayan, 1 Oras
+Parusa: Multa $200 + Sapilitang Paggawa o Lokal na Kulungan
+Sapilitang Paggawa: Pagtatanim 30 piraso ng buto / Konstruksiyon 5 round, o
+Kulungan: Town Jail, 1 Oras
 
 Uri 2: Kwalipikadong Pagnanakaw
 
-Pagpasok sa Bahay/Rantso, Panghihimasok (Establisimyentong Pangnegosyo at iba pang ari-arian)
+- Pagpasok sa bahay/ranch, trespassing (mga negosyo at pribadong pag-aari)
 
 Parusa: Multa $1,500 + Piitan
 Piitan: Piitang Sisika, 6 Oras
 
-Uri 3: Malaking Pagnanakaw
+Uri 3: Malakihang Panloloob
 
-Pagnanakaw sa Tindahan, Bangko, Grand Korrigan
-Pagnanakaw sa Negosyo
+- Pagnanakaw sa tindahan, bangko, Grand Korrigan Robbery
+- Pagnanakaw sa negosyo
 
 Parusa: Multa $500 + Pagsamsam at Piitan
 Piitan: Piitang Sisika, 3 Oras`,
@@ -77,8 +53,8 @@ Piitan: Piitang Sisika, 3 Oras`,
   {
     number: "102",
     title:
-      "Pananakit at Karahasan laban sa mga Kawani ng Gobyerno at Pagpapanggap/Paglapastangan sa Medalya ng Karangalan",
-    body: `Seksyon 1: Kung ang paglabag ay laban sa isang kasapi ng Kagawaran ng Kalusugan, ng hudikatura, o ng mga kasapi ng Gobyerno
+      "Pag-atake at Karahasan Laban sa mga Kawani ng Gobyerno at Pagpapanggap/Paglapastangan sa Medalya ng Karangalan",
+    body: `Seksyon 1: Kung ang biktima ay kasapi ng Kagawaran ng Kalusugan, ng hudikatura, o ng mga kasapi ng Gobyerno
 
 Pagtangkang pumatay, pagnanakaw, at pananakit sa mga kasapi ng gobyerno, hal. mga doktor, kasapi ng hudikatura, kasapi ng gobyerno.
 
@@ -86,7 +62,7 @@ Parusa: Multa $2,000 + Piitan
 Pagsamsam ng ilegal na sandata at gamit
 Piitan: Piitang Sisika, hanggang 6 Oras
 
-Seksyon 2: Kung ang paglabag ay laban sa mga Alagad ng Batas
+Seksyon 2: Kung ang biktima ay Tagapagpatupad ng Batas
 
 Parusa: Multa $1,500 + Piitan
 Pagsamsam ng ilegal na sandata at gamit
@@ -145,7 +121,7 @@ Seksyon 1: Uri A — Ari-arian ng Gobyerno at Mataas na Peligrong Sandata
 - Dinamita, TNT, Molotov
 - Walang pahintulot na Medalya, Uniporme, o Opisyal na Dokumento ng mga Alagad ng Batas
 - Detonator/Bitag ng Pampasabog
-- Selyo, Utos, o Kumpidensyal na Sulat ng Gobyerno
+- Selyo o Lihim na Dokumento ng Gobyerno
 
 Parusa: Agarang pagsamsam, pag-aresto, at malalang kaso ng pagtataksil o terorismo.
 $500 + Pagsamsam at Piitan
@@ -165,7 +141,6 @@ Parusa: Agarang pagsamsam, pag-aresto, at malalang kaso ng pagtataksil o teroris
 Unang Antas (1–20 na kontrabando): $200 (Piitan: 2 Oras)
 Ikalawang Antas (21–40 na kontrabando): $1,000 (Piitan: 4 Oras)
 Ikatlong Antas (higit sa 41 kontrabando): $2,500 (Piitan: 6 Oras)
-Piitan: Piitang Sisika, min. 2 Oras
 
 Seksyon 3: Uri C — Kagamitan sa Krimen
 "Walang tapat na tao ang lumalakad na may dala nito sa kanyang amerikana."
@@ -202,41 +177,14 @@ Piitan: Piitang Sisika, hanggang 6 Oras`,
   },
   {
     number: "108",
-    title: "Organisadong Krimen / Armadong Pagnanakaw / Pandarambong",
-    body: `Seksyon 1: Armadong Pagnanakaw ng Iisang Tao
-
-Sinumang taong, habang armado ng baril, kutsilyo, o iba pang nakamamatay na sandata, ay kinuha o sinubukang kunin ang pera, ari-arian, hayop, o anumang mahalagang bagay mula sa iba sa pamamagitan ng puwersa, pananakot, banta, o pagdulot ng takot ay ituturing na nagkasala ng Armadong Pagnanakaw.
-
-Parusa: Multa hanggang $1,250. Piitan: Hanggang 3 Oras.
-
-Seksyon 2: Armadong Pagnanakaw ng Dalawa o Higit Pang Tao
-
-Sinumang dalawa o higit pang tao na, sama-samang kumikilos at habang armado ng baril, kutsilyo, o iba pang nakamamatay na sandata, ay kinuha o sinubukang kunin ang pera, ari-arian, hayop, o anumang mahalagang bagay mula sa iba sa pamamagitan ng puwersa, pananakot, banta, o pagdulot ng takot ay ituturing na nagkasala ng Armadong Pagnanakaw ng Grupo.
-
-Parusa: Multa hanggang $1,500. Piitan: Hanggang 6 Oras.
-
-Seksyon 3: Pandarambong
-
-Ang Pandarambong ay tumutukoy sa pagsasama ng dalawa o higit pang indibidwal na regular na sama-samang gumagawa ng pagnanakaw, pananakot, pangingikil, panliligalig, o iba pang ilegal na gawain na naglalayong maghasik ng takot, kaguluhan, o panganib sa loob ng komunidad.
-
-Ipagpapalagay na sangkot sa Pandarambong ang isang grupo kung:
-(a) Ang mga kasapi nito ay nagsusuot ng parehas o magkatulad na damit, maskara, bandana, o iba pang gamit na naglalayong itago ang kanilang pagkakakilanlan o magpahiwatig ng pagkakaisa;
-(b) Ang mga kasapi nito ay regular na natagpuang sama-sama habang gumagawa ng krimen; at
-(c) Ang grupo ay kilala sa loob ng komunidad bilang pinagmumulan ng takot, kaguluhan, pananakot, o panganib.
+    title: "Organisadong Krimen / Pandarambong",
+    body: `Ang Pandarambong ay tumutukoy sa pagsasama ng dalawa o higit pang indibidwal na regular na sama-samang gumagawa ng pagnanakaw, pananakot, pangingikil, panliligalig, o iba pang ilegal na gawain na naglalayong maghasik ng takot, kaguluhan, o panganib sa loob ng komunidad.
 
 Parusa:
-Unang Antas (hanggang 15 talaan ng krimen): Multa na $250
-Ikalawang Antas (higit sa 15 talaan ng krimen): Multa na $1,500
-Ikatlong Antas (higit sa 30 talaan ng krimen): Multa na $2,500
-Piitan: Piitang Sisika — Pinakamataas na 6 Oras
-
-Seksyon 4: Nagpapabigat na Kalagayan
-
-Ang mga parusa sa ilalim ng Artikulong ito ay maaaring ipataw sa pinakamataas na antas kung:
-(a) May pinaputok na baril sa panahon ng paggawa ng paglabag;
-(b) Ang biktima ay nagdusa ng pisikal na pinsala;
-(c) Ang mga pampublikong daan, riles, bangko, negosyo, pasilidad ng gobyerno, o karwahe ang tinatarget;
-(d) Sinadya ng mga nagkasala na takutin ang publiko o guluhin ang kaayusang publiko.`,
+Unang Antas: Multa na $250
+Ikalawang Antas: Multa na $1,500
+Ikatlong Antas: Multa na $2,500
+Piitan: Piitang Sisika — Pinakamataas na 6 Oras`,
   },
   {
     number: "109",
@@ -307,10 +255,8 @@ Parusa: Pagkakabilanggo ng dalawa (2) hanggang anim (6) oras at multa na isang l
   },
   {
     number: "200",
-    title: "Hindi Awtorisadong Pagdadala ng Baril",
-    body: `Seksyon 1: Hindi Awtorisadong Baril — Rebolber at Pistola
-
-Mga baril ng mga Alagad ng Batas: anumang uri ng rebolber at pistola, tulad ng Schofield.
+    title: "Hindi Awtorisadong Baril ng Tagapagpatupad ng Batas",
+    body: `Seksyon 1: Anumang Uri ng Rebolber o Pistola na Para sa mga Tagapagpatupad ng Batas (Hal. Schofield)
 
 Mga Patakaran sa Baril at Lisensya:
 
@@ -323,9 +269,7 @@ Ang mga doktor ay pinapayagang magsukbit o magdala ng armas, ngunit hindi ito ma
 Parusa: Multa na $500
 
 
-Seksyon 2: Hindi Awtorisadong Baril — Repeater
-
-Mga baril ng mga Alagad ng Batas: anumang uri ng repeater, tulad ng Carbine o Winchester.
+Seksyon 2: Anumang Uri ng Repeater (Hal. Carbine / Winchester)
 
 Mga Patakaran sa Baril at Lisensya:
 
@@ -338,9 +282,7 @@ Ang mga doktor ay pinapayagang magsukbit o magdala ng armas, ngunit hindi ito ma
 Parusa: Multa na $1,500
 
 
-Seksyon 3: Hindi Awtorisadong Baril — Baril na Pamputok at Riple
-
-Mga baril ng mga Alagad ng Batas: anumang uri ng baril na pamputok at riple.
+Seksyon 3: Anumang Uri ng Baril na Pamputok at Riple (Hal. Springfield)
 
 Mga Patakaran sa Baril at Lisensya:
 

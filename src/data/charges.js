@@ -1,7 +1,3 @@
-// Direct port of the SIMPLE_* and ADV_* tables from the original
-// Tkinter app. Keys, labels, fines, jail values and descriptions are
-// preserved as-is so generated reports match the original tool.
-
 export const MAX_JAIL_YEARS = 6; // Simple tab only
 export const NONE_LABEL = "Wala / Hindi Aplikable";
 
@@ -295,7 +291,7 @@ export const ADV_CHARGES = {
   },
   unauthorized_revolver_pistol: {
     article: "Artikulo 200 Seksyon 1",
-    desc: "Hindi Awtorisadong Baril — Rebolber at Pistola (tulad ng Schofield)",
+    desc: "Pag dadala ng hindi awtorisadong Baril na Revolver o Pistola",
     fine: 500,
     jail_hours: 0,
     jail_note: "Dadalhin sa himpilan kung walang Lisensya sa Baril at Sedula",
@@ -303,7 +299,7 @@ export const ADV_CHARGES = {
 
   unauthorized_repeater: {
     article: "Artikulo 200 Seksyon 2",
-    desc: "Hindi Awtorisadong Baril — Repeater (tulad ng Carbine o Winchester)",
+    desc: "Pag dadala ng hindi awtorisadong Baril na Repeater",
     fine: 1500,
     jail_hours: 0,
     jail_note: "Dadalhin sa himpilan kung walang Lisensya sa Baril at Sedula",
@@ -311,7 +307,7 @@ export const ADV_CHARGES = {
 
   unauthorized_shotgun_rifle: {
     article: "Artikulo 200 Seksyon 3",
-    desc: "Hindi Awtorisadong Baril — Shotgun at Rifle (tulad ng Double Barrel Shotgun o Springfield)",
+    desc: "Pag dadala ng hindi awtorisadong Baril na Shotgun o Rifle",
     fine: 5000,
     jail_hours: 0,
     jail_note: "Dadalhin sa himpilan kung walang Lisensya sa Baril at Sedula",

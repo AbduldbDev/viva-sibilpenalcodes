@@ -3,6 +3,9 @@ import { ref, provide, computed } from "vue";
 import SimpleTab from "./components/SimpleTab.vue";
 import AdvancedTab from "./components/AdvancedTab.vue";
 import PenalCodeTab from "./components/Penalcodetab.vue";
+import JailGuideTab from "./components/JailGuide.vue";
+import CriminalLawTab from "./components/CriminalLaw.vue";
+import ConstitutionTab from "./components/ConstitutionTab.vue";
 import SettingsTab from "./components/SettingsTab.vue";
 import UpdateGate from "./components/UpdateGate.vue";
 import VersionOverlay from "./components/VersionOverlay.vue";
@@ -10,7 +13,10 @@ import VersionOverlay from "./components/VersionOverlay.vue";
 const TABS = [
   { id: "simple", label: "Simple", component: SimpleTab },
   { id: "advanced", label: "Advanced", component: AdvancedTab },
+  { id: "jail-guide", label: "Jail Guide", component: JailGuideTab },
   { id: "penal-code", label: "Penal Code", component: PenalCodeTab },
+  { id: "criminal-law", label: "Criminal Law", component: CriminalLawTab },
+  { id: "constitution", label: "Constitution", component: ConstitutionTab },
 ];
 
 const activeTab = ref(TABS[0].id);
