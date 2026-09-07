@@ -1,8 +1,8 @@
 {
   "name": "viva-sibil-penal-codes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
-  "description": "Ulat ng Kaso — VIVA! Sibil Penal Codes (Vue + Tauri, RDR2-themed)",
+  "description": "Ulat ng Kaso — VIVA! Sibil Penal Codes",
   "type": "module",
   "scripts": {
     "dev": "vite",

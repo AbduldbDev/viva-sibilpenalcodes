@@ -9,7 +9,7 @@
   },
   "package": {
     "productName": "VivaSibil!",
-    "version": "1.0.3"
+    "version": "1.0.4"
   },
   "tauri": {
     "allowlist": {
@@ -37,7 +37,7 @@
     "updater": {
       "active": true,
       "dialog": false,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEE2QkMwNkE5ODk4ODdENgpSV1RXaDVpWWFzQnJDbEFPc2hoN20rSzZaa3pkQjQxSk1Jd3dpY3F2MEZIZUJKbGhvYXJJbzRIOQo=",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDJCRUJFMTkyQTE3Q0YwRDUKUldUVjhIeWhrdUhyS3p1OG10MmFBKzBWU3MyaVpzd280QjFrbHRNZjFWSU5zNmJSczRKZXh0cDAK",
       "endpoints": [
         "https://github.com/AbduldbDev/viva-sibilpenalcodes/releases/latest/download/latest.json"
       ]
