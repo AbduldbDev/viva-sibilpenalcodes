@@ -8,7 +8,7 @@ export const PENAL_CODE = [
     title: "Sibil na Paglabag",
     body: `Seksyon 1: Pambubulabog sa Kapayapaan / Iskandalo sa Publiko
 
-- Paglaboy-loyob / Pagkalat ng Basura
+- Paglaboy-laboy / Pagkalat ng Basura
 - Magulong Asal
 - Paglapastangan sa mga lumang labi tulad ng makasaysayang templo, lumang guho, at simbahan
 - Sapakan/Away ng mga Residente
