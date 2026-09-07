@@ -8,8 +8,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "VivaSibil!",
-    "version": "1.0.4"
+    "productName": "VivaSibil",
+    "version": "1.0.5"
   },
   "tauri": {
     "allowlist": {
