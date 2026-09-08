@@ -1,10 +1,18 @@
-export const MAX_JAIL_YEARS = 6; // Simple tab only
+export const MAX_JAIL_HOURS = 12;
 export const NONE_LABEL = "Wala / Hindi Aplikable";
 
-// ============================================================
-// SIMPLE TAB
-// key -> { article, fine, jail, desc }
-// ============================================================
+export function hoursToJailLabel(hours) {
+  const months = hours * 6;
+
+  if (months < 12) {
+    return `${months} month${months === 1 ? "" : "s"}`;
+  }
+
+  const years = months / 12;
+
+  return `${months} months / ${years} year${years === 1 ? "" : "s"}`;
+}
+
 export const SIMPLE_CHARGES = {
   pangungulo: {
     article: "Artikulo 100 Seksyon 1",
@@ -28,37 +36,37 @@ export const SIMPLE_CHARGES = {
     article: "Artikulo 101 Seksyon 2",
     fine: 1500,
     jail: 6,
-    desc: "Pagnanakaw sa Bahay/Rancho/Trespassing/Government Establishment + (6years)",
+    desc: "Pagnanakaw sa Bahay/Rancho/Trespassing/Government Establishment + (3years)",
   },
   nakaw_estab: {
     article: "Artikulo 101 Seksyon 3",
     fine: 500,
     jail: 6,
-    desc: "Pagnanakaw sa tindahan/bangko/korrigan + (6years)",
+    desc: "Pagnanakaw sa tindahan/bangko/korrigan + (3years)",
   },
   tangkang_patay: {
     article: "Artikulo 102 Seksyon 2",
     fine: 1500,
     jail: 4,
-    desc: "Tangkang pagpatay at pananakit sa mga alagad ng batas + (4years)",
+    desc: "Tangkang pagpatay at pananakit sa mga alagad ng batas + (2years)",
   },
   nakaw_bagon: {
     article: "Artikulo 105 Seksyon 1",
     fine: 500,
     jail: 6,
-    desc: "Pagnanakaw sa bagon + (6years)",
+    desc: "Pagnanakaw sa bagon/tren + (3years)",
   },
   high_risk: {
     article: "Artikulo 106 Seksyon 1",
     fine: 500,
     jail: 6,
-    desc: "Pagdadala ng TNT/Dynamite/Molotov + (6years)",
+    desc: "Pagdadala ng TNT/Dynamite/Molotov + (3years)",
   },
   illegal_droga: {
     article: "Artikulo 106 Seksyon 2",
     fine: 200,
     jail: 2,
-    desc: "Pagdadala ng illegal na droga + (2years)",
+    desc: "Pagdadala ng illegal na droga + (1year)",
   },
   ninakaw_gamit: {
     article: "Artikulo 106 Seksyon 4",
@@ -86,11 +94,25 @@ export const SIMPLE_CHARGES = {
   },
 };
 
+export const SIMPLE_LOCATION_DESC = {
+  Bangko: "Pagnanakaw sa Bangko + (3years)",
+  Tindahan: "Pagnanakaw sa Tindahan + (3years)",
+  Korrigan: "Pagnanakaw sa Korrigan + (3years)",
+  Bagon: "Pagnanakaw sa Bagon + (3years)",
+  Tren: "Pagnanakaw sa Tren + (3years)",
+  Banyaga: "Pagnanakaw sa Banyaga",
+  Sampayan: "Pagnanakaw sa Sampayan",
+  Sementeryo: "Pagnanakaw sa Sementeryo",
+  "Bahay/Rancho": "Pagnanakaw sa Bahay/Rancho + (3years)",
+  Trespassing: "Trespassing + (3years)",
+};
+
 export const SIMPLE_LOCATION_TO_CHARGE = {
   Bangko: "nakaw_estab",
   Tindahan: "nakaw_estab",
   Korrigan: "nakaw_estab",
   Bagon: "nakaw_bagon",
+  Tren: "nakaw_bagon",
   Banyaga: "nakaw_small",
   Sampayan: "nakaw_small",
   Sementeryo: "nakaw_small",

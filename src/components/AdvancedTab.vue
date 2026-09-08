@@ -8,9 +8,10 @@ import {
   ADV_NARCOTICS_TIERS,
   ADV_BANDITRY_TIERS,
   NONE_LABEL,
+  MAX_JAIL_HOURS,
+  hoursToJailLabel,
   formatG,
 } from "../data/charges.js";
-
 const notify = inject("notify");
 
 const suspectName = ref("");
@@ -107,18 +108,51 @@ function generateReport() {
   let totalFine = 0;
   let totalJailHours = 0;
   const lines = [];
+  const specialNotes = [];
 
   for (const charge of napili) {
     const fine = charge.fine ?? 0;
     totalFine += fine;
     totalJailHours += charge.jail_hours ?? 0;
 
-    lines.push(`• ${charge.article} — $${fine} — ${charge.desc}`);
+    const fineText = charge.fine_note
+      ? `$${fine} (${charge.fine_note})`
+      : `$${fine}`;
+
+    let line = `• ${charge.article} — ${fineText} — ${charge.desc}`;
+    if (charge.jail_note) {
+      line += ` [${charge.jail_note}]`;
+    }
+    lines.push(line);
+
+    if (charge.jail_special) {
+      specialNotes.push(`  ⚠ ${charge.article}: ${charge.jail_special}`);
+    }
   }
 
-  const parts = [...lines];
-  parts.push(`Total Fine: $${totalFine}`);
-  parts.push(`Total Jail: ${formatG(totalJailHours)} years`);
+  const cappedJailHours = Math.min(totalJailHours, MAX_JAIL_HOURS);
+  const cappedNote =
+    totalJailHours > MAX_JAIL_HOURS
+      ? ` (naabot na ang max na ${MAX_JAIL_HOURS} oras)`
+      : "";
+
+  const parts = [];
+
+  if (specialNotes.length) {
+    parts.push("");
+    parts.push("Espesyal na Parusa:");
+    parts.push(...specialNotes);
+  }
+  parts.push("Suspek: " + (suspectName.value.trim() || "Hindi Kilala"));
+  parts.push("");
+  parts.push("Mga Paglabag:");
+  parts.push(...lines);
+  parts.push("");
+
+  parts.push(`Kabuuang Multa: $${formatG(totalFine)}`);
+  parts.push(
+    `Kabuuang Taon ng Pagkakakulong: ${hoursToJailLabel(cappedJailHours)}${cappedNote}`,
+  );
 
   report.value = parts.join("\n") + "\n";
 }
@@ -219,11 +253,9 @@ function generateReport() {
     </p>
 
     <div class="btn-row">
-      <button class="btn btn-primary" @click="generateReport">
-        Buuin ang Ulat
-      </button>
-      <button class="btn" @click="clearForm">Linisin ang Form</button>
-      <button class="btn" @click="copyReport">Kopyahin</button>
+      <button class="btn btn-primary" @click="generateReport">Submit</button>
+      <button class="btn" @click="clearForm">Clear Form</button>
+      <button class="btn" @click="copyReport">Copy</button>
     </div>
 
     <div class="case-file" :class="{ empty: !report }">
