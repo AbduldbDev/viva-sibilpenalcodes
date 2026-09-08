@@ -3,9 +3,11 @@ import { ref, inject } from "vue";
 import {
   SIMPLE_CHARGES,
   SIMPLE_LOCATION_TO_CHARGE,
+  SIMPLE_LOCATION_DESC,
   SIMPLE_EVIDENCE_OPTIONS,
   SIMPLE_EXTRA_CHARGE_OPTIONS,
-  MAX_JAIL_YEARS,
+  MAX_JAIL_HOURS,
+  hoursToJailLabel,
 } from "../data/charges.js";
 
 const notify = inject("notify");
@@ -44,37 +46,46 @@ function copyReport() {
 }
 
 function generateReport() {
-  const chargeKeys = [];
+  const charges = [];
 
   if (location.value) {
-    chargeKeys.push(SIMPLE_LOCATION_TO_CHARGE[location.value]);
+    const key = SIMPLE_LOCATION_TO_CHARGE[location.value];
+    charges.push({ key, desc: SIMPLE_LOCATION_DESC[location.value] });
   }
   for (const [key, on] of Object.entries(evidence.value)) {
-    if (on) chargeKeys.push(key);
+    if (on) charges.push({ key, desc: SIMPLE_CHARGES[key].desc });
   }
-  if (sedula.value) chargeKeys.push("walang_sedula");
+  if (sedula.value) {
+    charges.push({
+      key: "walang_sedula",
+      desc: SIMPLE_CHARGES.walang_sedula.desc,
+    });
+  }
   for (const [key, on] of Object.entries(extras.value)) {
-    if (on) chargeKeys.push(key);
+    if (on) charges.push({ key, desc: SIMPLE_CHARGES[key].desc });
   }
 
-  chargeKeys.sort((a, b) =>
-    SIMPLE_CHARGES[a].article.localeCompare(SIMPLE_CHARGES[b].article),
+  charges.sort((a, b) =>
+    SIMPLE_CHARGES[a.key].article.localeCompare(SIMPLE_CHARGES[b.key].article),
   );
 
   let totalFine = 0;
-  let totalJail = 0;
+  let totalJailHours = 0;
   const lines = [];
 
-  for (const key of chargeKeys) {
-    const { article, fine, jail, desc } = SIMPLE_CHARGES[key];
+  for (const { key, desc } of charges) {
+    const { article, fine, jail } = SIMPLE_CHARGES[key];
     totalFine += fine;
-    totalJail += jail;
+    totalJailHours += jail;
     lines.push(`${article} — $${fine} — ${desc}`);
   }
 
-  const cappedJail = Math.min(totalJail, MAX_JAIL_YEARS);
+  const cappedJailHours = Math.min(totalJailHours, MAX_JAIL_HOURS);
   const cappedNote =
-    totalJail > MAX_JAIL_YEARS ? " (naabot na ang max na 6 taon)" : "";
+    totalJailHours > MAX_JAIL_HOURS
+      ? ` (naabot na ang max na ${MAX_JAIL_HOURS} oras)`
+      : "";
+
   const locationText = location.value
     ? `Lugar ng insidente: ${location.value}\n`
     : "";
@@ -83,10 +94,10 @@ function generateReport() {
     `Suspek: ${suspectName.value}\n` +
     `${locationText}\n` +
     "Mga Paglabag:\n" +
-    (lines.length ? lines.map((l) => `  - ${l}`).join("\n") : "  - Wala") +
+    (lines.length ? lines.map((l) => `  • ${l}`).join("\n") : "  - Wala") +
     "\n\n" +
-    `Total Fines: $${totalFine}\n` +
-    `Total Jail: ${cappedJail} years${cappedNote}\n`;
+    `Kabuuang Multa: $${totalFine}\n` +
+    `Kabuuang taon ng pagkakakulong: ${hoursToJailLabel(cappedJailHours)}${cappedNote}\n`;
 }
 </script>
 
